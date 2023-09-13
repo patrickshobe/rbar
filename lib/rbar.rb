@@ -49,15 +49,17 @@ class Rbar < ::RSpec::Core::Formatters::BaseTextFormatter
     failed_bar.advance(1, count: (failed_count + 1).to_s)
   end
 
-  private
-
-  attr_accessor :total, :pending_bar, :failed_bar, :failed_count, :pending_count, :pass_bar, :pass_count
-
   def progress_bar
     @progress_bar ||= TTY::ProgressBar::Multi.new(
-      width: 40,
+      width: 40
     )
   end
+
+  attr_accessor :pass_count, :pending_count, :failed_count, :pending_bar, :failed_bar, :pass_bar
+
+  private
+
+  attr_accessor :total
 
   def register_sub_bars
     self.pass_bar = progress_bar.register("Passed  [:bar :percent] :count/:total",
@@ -82,8 +84,11 @@ class Rbar < ::RSpec::Core::Formatters::BaseTextFormatter
 
   def initialize_bars
     pass_bar.advance(count: "0")
+    pass_bar.current = 0
     pending_bar.advance(count: "0")
+    pending_bar.current = 0
     failed_bar.advance(count: "0")
+    failed_bar.current = 0
   end
 
   def marker
