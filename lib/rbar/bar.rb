@@ -1,24 +1,24 @@
 # frozen_string_literal: true
 
-require 'rspec/core'
-require 'rspec/core/formatters/base_text_formatter'
-require 'tty-progressbar'
+require "rspec/core"
+require "rspec/core/formatters/base_text_formatter"
+require "tty-progressbar"
 
-require_relative '../rbar'
-require_relative './bars/passing'
-require_relative './bars/pending'
-require_relative './bars/failed'
+require_relative "../rbar"
+require_relative "./bars/passing"
+require_relative "./bars/pending"
+require_relative "./bars/failed"
 
 module Rbar
   class Bar < ::RSpec::Core::Formatters::BaseTextFormatter
     ::RSpec::Core::Formatters.register self,
-                                       :example_failed,
-                                       :example_passed,
-                                       :example_pending,
-                                       :dump_pending,
-                                       :dump_failed,
-                                       :dump_summary,
-                                       :start
+      :example_failed,
+      :example_passed,
+      :example_pending,
+      :dump_pending,
+      :dump_failed,
+      :dump_summary,
+      :start
 
     def start(notification)
       super

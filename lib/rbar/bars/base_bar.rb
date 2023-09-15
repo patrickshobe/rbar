@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-require 'tty-progressbar'
+require "tty-progressbar"
 
 module Rbar
   module Bars
@@ -19,11 +19,11 @@ module Rbar
 
       def register_self
         bar = parent_bar.register(format,
-                                  bar_format: :square,
-                                  total: total,
-                                  count: '0',
-                                  width: TTY::Screen.width * 0.75,
-                                  complete: color)
+          bar_format: :square,
+          total: total,
+          count: "0",
+          width: TTY::Screen.width * 0.75,
+          complete: color)
         bar.start
         bar
       end
@@ -53,7 +53,7 @@ module Rbar
       end
 
       def format
-        '[:bar :percent]'
+        "[:bar :percent]"
       end
     end
   end

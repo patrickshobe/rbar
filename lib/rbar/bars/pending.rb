@@ -2,8 +2,8 @@
 
 # # frozen_string_literal: true
 
-require 'pastel'
-require_relative './base_bar'
+require "pastel"
+require_relative "./base_bar"
 
 module Rbar
   module Bars
@@ -13,7 +13,7 @@ module Rbar
       end
 
       def format
-        'Pending [:bar :percent] :current'
+        "Pending [:bar :percent] :current"
       end
     end
   end
