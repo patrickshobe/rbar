@@ -1,6 +1,8 @@
+# frozen_string_literal: true
+
 Gem::Specification.new do |spec|
   spec.name = "rbar"
-  spec.version = '0.0.1'
+  spec.version = "0.0.1"
   spec.authors = ["Patrick Shobe"]
   spec.email = ["patrick@shobe.dev"]
 
@@ -8,7 +10,7 @@ Gem::Specification.new do |spec|
   spec.description = "A progress bar with options"
   spec.homepage = "https://github.com/patrickshobe/rbar"
   spec.license = "MIT"
-  spec.required_ruby_version = ">= 2.6.0"
+  spec.required_ruby_version = ">= 2.7.0"
 
   spec.metadata["allowed_push_host"] = "https://rubygems.org"
 
@@ -32,10 +34,9 @@ Gem::Specification.new do |spec|
   # For more information and examples about making a new gem, check out our
   # guide at: https://bundler.io/guides/creating_gem.html
   #
+  spec.add_dependency "pastel", "~> 0.7.4"
   spec.add_dependency "rspec-core", ["~> 3.10"]
   spec.add_dependency "tty-progressbar", ["~> 0.18.2"]
-  spec.add_dependency "pastel", "~> 0.7.4"
 
-  spec.add_development_dependency "debug", ["~> 1.0"]
-  spec.add_development_dependency "rspec", ["~> 3.12"]
+  spec.metadata["rubygems_mfa_required"] = "true"
 end
