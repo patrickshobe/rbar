@@ -90,10 +90,7 @@ module Rbar
 
     def dump_summary(notifi)
       box = TTY::Box.frame(title: { top_left: " Seed #{@seed}" }, width: TTY::Screen.width, padding: 1) do
-        string = TTY::Box.frame(style: { border: {
-                                  fg: :red,
-                                  bg: :black
-                                } }, width: width) { @failed }
+        string = @failed
         string << print_summary(notifi)
       end
       puts
