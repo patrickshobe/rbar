@@ -37,6 +37,9 @@ Gem::Specification.new do |spec|
   spec.add_dependency "pastel", "~> 0.7.4"
   spec.add_dependency "rspec-core", ["~> 3.10"]
   spec.add_dependency "tty-progressbar", ["~> 0.18.2"]
+  spec.add_dependency "tty-table", ["~> 0.11.0"]
+  spec.add_dependency "tty-box"
+  spec.add_dependency "tty-tree", ["~> 0.4.0"]
 
   spec.metadata["rubygems_mfa_required"] = "true"
 end
